@@ -9,16 +9,17 @@ class GreetingPlugin implements Plugin<Project> {
             project.android.applicationVariants.each { variant ->
                 def dexTask = project.tasks.findByName("transformClassesWithDexFor${variant.name.capitalize()}")
                 if (dexTask) {
+                    println "dexTask name = " + dexTask.name;
                     project.logger.error "dex=>${variant.name.capitalize()}"
 
-                    dexTask.inputs.files.files.each { File file ->
-                        project.logger.error "file inputs=>${file.absolutePath}"
-                        project.logger.error "hello world"
-                    }
+//                    dexTask.inputs.files.files.each { File file ->
+//                        project.logger.error "file inputs=>${file.absolutePath}"
+//                        project.logger.error "hello world"
+//                    }
 
-                    dexTask.outputs.files.files.each { File file ->
-                        project.logger.error "file outputs=>${file.absolutePath}"
-                    }
+//                    dexTask.outputs.files.files.each { File file ->
+//                        project.logger.error "file outputs=>${file.absolutePath}"
+//                    }
                 }
             }
         }

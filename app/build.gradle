@@ -23,9 +23,9 @@ android {
     }
 
     productFlavors{
-        qihoo {
+        monkey {
         }
-        xiaomi {
+        tiger {
         }
     }
 }
