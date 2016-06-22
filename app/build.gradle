@@ -37,3 +37,8 @@ dependencies {
 }
 
 
+klp {
+    message = 'Hi'
+    greeter = 'Gradle'
+}
+

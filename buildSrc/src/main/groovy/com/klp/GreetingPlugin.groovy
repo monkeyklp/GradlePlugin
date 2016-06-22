@@ -5,6 +5,10 @@ import org.gradle.api.Project;
 
 class GreetingPlugin implements Plugin<Project> {
     void apply(Project project) {
+        project.extensions.create("klp", GreetingPluginExtension);
+        project.task('hello') << {
+            println "${project.klp.message} from ${project.klp.greeter}"
+        }
         project.afterEvaluate {
             project.android.applicationVariants.each { variant ->
                 def dexTask = project.tasks.findByName("transformClassesWithDexFor${variant.name.capitalize()}")
@@ -24,6 +28,11 @@ class GreetingPlugin implements Plugin<Project> {
             }
         }
     }
+}
+
+class GreetingPluginExtension {
+    String message
+    String greeter
 }
 
 
