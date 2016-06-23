@@ -23,10 +23,10 @@ android {
     }
 
     productFlavors{
-        monkey {
-        }
-        tiger {
-        }
+//        monkey {
+//        }
+//        tiger {
+//        }
     }
 }
 
@@ -40,5 +40,6 @@ dependencies {
 klp {
     message = 'Hi'
     greeter = 'Gradle'
+    outPutFile = new File(project.buildDir, "klpOutput")
 }
 
