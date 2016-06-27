@@ -36,12 +36,12 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.3.0'
 }
 
-android.applicationVariants.all { variant ->
-    variant.outputs.each { output ->
-//        def file = output.outputFile
-        output.outputFile = new File(project.buildDir, "klpOutput")
-    }
-}
+//android.applicationVariants.all { variant ->
+//    variant.outputs.each { output ->
+////        def file = output.outputFile
+//        output.outputFile = new File(project.buildDir, "klpOutput.apk")
+//    }
+//}
 
 
 klp {
