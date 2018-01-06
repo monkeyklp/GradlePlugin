@@ -1,4 +1,4 @@
-package klp.chebada.com.gradleplugin;
+package klp.com.gradleplugin;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
