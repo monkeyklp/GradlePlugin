@@ -1,4 +1,4 @@
-package klp.chebada.com.gradleplugin;
+package klp.com.gradleplugin;
 
 import org.junit.Test;
 
