@@ -10,14 +10,14 @@ class GreetingPlugin implements Plugin<Project> {
     void apply(Project project) {
         //演示添加外部属性
         klpExt = project.extensions.create("klp", GreetingPluginExtension, project);
-        project.task('hello') << {
+        project.task('hello').doLast {
             println "${project.klp.message} from ${project.klp.greeter}"
         }
 
 
         project.afterEvaluate {//gradle建立完task的有向图
             //清除自定义的输出文件夹
-            def cleanCustomOutputFileTask = project.task("cleanCustomOutputFile") << {
+            def cleanCustomOutputFileTask = project.task("cleanCustomOutputFile").doLast {
                 def dir = klpExt.outPutFile;
                 if (dir && dir.listFiles()) {
                     dir.listFiles().sort().each { File file ->
@@ -37,11 +37,10 @@ class GreetingPlugin implements Plugin<Project> {
 
 //
             project.android.applicationVariants.all { variant ->
+                variant.outputs.all {
+                    variant.getPackageApplication().outputDirectory = klpExt.outPutFile
+                    outputFileName = "custom.apk"
 
-                originalOutputFile = variant.outputs[0].outputFile;// 原路径
-                println originalOutputFile.absolutePath
-                variant.outputs.each { output ->
-                    output.outputFile = new File(klpExt.outPutFile, "custom.apk")
                 }
             }
         }
