@@ -2,12 +2,12 @@ apply plugin: 'com.android.application'
 apply plugin: com.klp.GreetingPlugin
 
 android {
-    compileSdkVersion 23
+    compileSdkVersion 26
 
     defaultConfig {
         applicationId "klp.com.gradleplugin"
         minSdkVersion 14
-        targetSdkVersion 23
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
     }
@@ -39,5 +39,5 @@ dependencies {
 klp {
     message = 'Hi'
     greeter = 'Gradle'
-    outPutFile = new File(project.buildDir, "klpOutput")
+    outPutFile = new File(project.buildDir, "kotlinOutput")
 }
