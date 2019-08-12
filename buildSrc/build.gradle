@@ -20,7 +20,7 @@ sourceSets {
             srcDirs += []
         }
         kotlin {
-            srcDirs += ['src/main/kotlin', 'src/main/java']
+            srcDirs += ['src/main/kotlin', 'src/main/java', 'src/main/groovy']
         }
     }
     test {
@@ -28,7 +28,7 @@ sourceSets {
             srcDirs += []
         }
         kotlin {
-            srcDirs += ['src/main/kotlin', 'src/main/java']
+            srcDirs += ['src/main/kotlin', 'src/main/java', 'src/main/groovy']
         }
     }
 }

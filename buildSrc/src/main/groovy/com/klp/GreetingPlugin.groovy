@@ -38,7 +38,7 @@ class GreetingPlugin implements Plugin<Project> {
 //
             project.android.applicationVariants.all { variant ->
                 variant.outputs.all {
-                    variant.getPackageApplication().outputDirectory = klpExt.outPutFile
+                    variant.getPackageApplicationProvider().get().outputDirectory = klpExt.outPutFile
                     outputFileName = "custom.apk"
 
                 }
